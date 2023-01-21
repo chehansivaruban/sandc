@@ -1,5 +1,24 @@
-<br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function plugin_dir_path() in D:\programs\xampp\htdocs\sandc\wp-content\plugins\simply-static\vendor\a5hleyrich\wp-background-processing\wp-background-processing.php:20
-Stack trace:
-#0 {main}
-  thrown in <b>D:\programs\xampp\htdocs\sandc\wp-content\plugins\simply-static\vendor\a5hleyrich\wp-background-processing\wp-background-processing.php</b> on line <b>20</b><br>
+<?php
+/**
+ * WP-Background Processing
+ *
+ * @package WP-Background-Processing
+ */
+
+/*
+Plugin Name: WP Background Processing
+Plugin URI: https://github.com/A5hleyRich/wp-background-processing
+Description: Asynchronous requests and background processing in WordPress.
+Author: Delicious Brains Inc.
+Version: 1.0
+Author URI: https://deliciousbrains.com/
+GitHub Plugin URI: https://github.com/A5hleyRich/wp-background-processing
+GitHub Branch: master
+*/
+
+if ( ! class_exists( 'WP_Async_Request' ) ) {
+	require_once plugin_dir_path( __FILE__ ) . 'classes/wp-async-request.php';
+}
+if ( ! class_exists( 'WP_Background_Process' ) ) {
+	require_once plugin_dir_path( __FILE__ ) . 'classes/wp-background-process.php';
+}

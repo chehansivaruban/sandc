@@ -1,5 +1,39 @@
-<br>
-<b>Fatal error</b>:  Uncaught Error: Interface &quot;Symfony\Component\CssSelector\Node\NodeInterface&quot; not found in D:\programs\xampp\htdocs\sandc\wp-content\plugins\simply-static\vendor\symfony\css-selector\Node\AbstractNode.php:24
-Stack trace:
-#0 {main}
-  thrown in <b>D:\programs\xampp\htdocs\sandc\wp-content\plugins\simply-static\vendor\symfony\css-selector\Node\AbstractNode.php</b> on line <b>24</b><br>
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Node;
+
+/**
+ * Abstract base node class.
+ *
+ * This component is a port of the Python cssselect library,
+ * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
+ *
+ * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ *
+ * @internal
+ */
+abstract class AbstractNode implements NodeInterface
+{
+    /**
+     * @var string
+     */
+    private $nodeName;
+
+    public function getNodeName(): string
+    {
+        if (null === $this->nodeName) {
+            $this->nodeName = preg_replace('~.*\\\\([^\\\\]+)Node$~', '$1', static::class);
+        }
+
+        return $this->nodeName;
+    }
+}
