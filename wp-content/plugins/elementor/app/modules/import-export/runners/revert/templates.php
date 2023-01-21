@@ -1,19 +1,5 @@
-<?php
-
-namespace Elementor\App\Modules\ImportExport\Runners\Revert;
-
-class Templates extends Revert_Runner_Base {
-	/*
-	 * The implement of this runner is part of the Pro plugin.
-	 */
-
-	public static function get_name() : string {
-		return 'templates';
-	}
-
-	public function should_revert( array $data ) : bool {
-		return false;
-	}
-
-	public function revert( array $data ) { }
-}
+<br>
+<b>Fatal error</b>:  Uncaught Error: Class &quot;Elementor\App\Modules\ImportExport\Runners\Revert\Revert_Runner_Base&quot; not found in D:\programs\xampp\htdocs\sandc\wp-content\plugins\elementor\app\modules\import-export\runners\revert\templates.php:5
+Stack trace:
+#0 {main}
+  thrown in <b>D:\programs\xampp\htdocs\sandc\wp-content\plugins\elementor\app\modules\import-export\runners\revert\templates.php</b> on line <b>5</b><br>

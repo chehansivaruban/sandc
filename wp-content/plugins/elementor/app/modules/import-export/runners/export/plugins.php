@@ -1,29 +1,5 @@
-<?php
-
-namespace Elementor\App\Modules\ImportExport\Runners\Export;
-
-class Plugins extends Export_Runner_Base {
-
-	public static function get_name() : string {
-		return 'plugins';
-	}
-
-	public function should_export( array $data ) {
-		return (
-			isset( $data['include'] ) &&
-			in_array( 'plugins', $data['include'], true ) &&
-			is_array( $data['selected_plugins'] )
-		);
-	}
-
-	public function export( array $data ) {
-		$manifest_data['plugins'] = $data['selected_plugins'];
-
-		return [
-			'manifest' => [
-				$manifest_data,
-			],
-			'files' => [],
-		];
-	}
-}
+<br>
+<b>Fatal error</b>:  Uncaught Error: Class &quot;Elementor\App\Modules\ImportExport\Runners\Export\Export_Runner_Base&quot; not found in D:\programs\xampp\htdocs\sandc\wp-content\plugins\elementor\app\modules\import-export\runners\export\plugins.php:5
+Stack trace:
+#0 {main}
+  thrown in <b>D:\programs\xampp\htdocs\sandc\wp-content\plugins\elementor\app\modules\import-export\runners\export\plugins.php</b> on line <b>5</b><br>

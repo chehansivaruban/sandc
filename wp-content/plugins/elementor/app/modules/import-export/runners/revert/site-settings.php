@@ -1,27 +1,5 @@
-<?php
-
-namespace Elementor\App\Modules\ImportExport\Runners\Revert;
-
-use Elementor\Plugin;
-
-class Site_Settings extends Revert_Runner_Base {
-
-	public static function get_name() : string {
-		return 'site-settings';
-	}
-
-	public function should_revert( array $data ) : bool {
-		return (
-			isset( $data['runners'] ) &&
-			array_key_exists( static::get_name(), $data['runners'] )
-		);
-	}
-
-	public function revert( array $data ) {
-		Plugin::$instance->kits_manager->revert(
-			$data['runners'][ static::get_name() ]['imported_kit_id'],
-			$data['runners'][ static::get_name() ]['active_kit_id'],
-			$data['runners'][ static::get_name() ]['previous_kit_id']
-		);
-	}
-}
+<br>
+<b>Fatal error</b>:  Uncaught Error: Class &quot;Elementor\App\Modules\ImportExport\Runners\Revert\Revert_Runner_Base&quot; not found in D:\programs\xampp\htdocs\sandc\wp-content\plugins\elementor\app\modules\import-export\runners\revert\site-settings.php:7
+Stack trace:
+#0 {main}
+  thrown in <b>D:\programs\xampp\htdocs\sandc\wp-content\plugins\elementor\app\modules\import-export\runners\revert\site-settings.php</b> on line <b>7</b><br>
